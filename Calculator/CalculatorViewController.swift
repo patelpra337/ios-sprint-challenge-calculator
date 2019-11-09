@@ -33,7 +33,10 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func equalTapped(_ sender: UIButton) {
-        
+        if let doCalulate = brain?.calculateIfPossible() {
+            outputLabel.text = doCalulate
+            clearTransaction()
+        }
     }
     
     @IBAction func clearTapped(_ sender: UIButton) {
