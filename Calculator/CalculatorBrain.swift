@@ -35,6 +35,17 @@ class CalculatorBrain {
     }
     
     func calculateIfPossible() -> String? {
-        
+        if operand1String.isEmpty || operand2String.isEmpty || operatorType == nil {
+            return ""
+        } else {
+            var arithmetic: String
+            
+            if let firstOperand = Double(operand1String), let secondOperand = Double(operand2String) {
+                switch operatorType {
+                case .addition? :
+                    
+                }
+            }
+        }
     }
 }
