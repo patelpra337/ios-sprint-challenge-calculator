@@ -40,7 +40,7 @@ class CalculatorBrain {
         } else {
             var doArithmetic: String
             
-            if let firstOperand = Int(operand1String), let secondOperand = Int(operand2String) {
+            if let firstOperand = Double(operand1String), let secondOperand = Double(operand2String) {
                 switch operatorType {
                 case .addition? :
                     doArithmetic = String(firstOperand + secondOperand)
