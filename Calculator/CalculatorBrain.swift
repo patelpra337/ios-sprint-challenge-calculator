@@ -38,14 +38,27 @@ class CalculatorBrain {
         if operand1String.isEmpty || operand2String.isEmpty || operatorType == nil {
             return ""
         } else {
-            var arithmetic: String
+            var doArithmetic: String
             
-            if let firstOperand = Double(operand1String), let secondOperand = Double(operand2String) {
+            if let firstOperand = Int(operand1String), let secondOperand = Int(operand2String) {
                 switch operatorType {
                 case .addition? :
-                    
+                    doArithmetic = String(firstOperand + secondOperand)
+                case .subtraction? :
+                    doArithmetic = String(firstOperand - secondOperand)
+                case .multiplication? :
+                    doArithmetic = String(firstOperand * secondOperand)
+                case .division? :
+                    if secondOperand == 0 {
+                        return "Error"
+                    } else {
+                        doArithmetic = String(firstOperand / secondOperand)
+                    }
+                default:
+                    return nil
                 }
+            } else { return nil }
+                return doArithmetic
             }
         }
     }
-}
